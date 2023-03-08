@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     //define entry point
     entry: "./src/script-1.js",
 
@@ -11,14 +12,13 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-          title: 'Output Management',
           template: './src/index.html'
         }),
       ],
     //define output
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: "bundle.js"
+        filename: '[name].bundle.js'
     },
 
     optimization: {
